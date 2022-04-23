@@ -1,2 +1,2 @@
 # Proyecto-Recetario
-Pagina web sobre un recetario para entregar como proyecto en la materia Lenguajes de computación 4
+Pagina web sobre un recetario para entregar como proyecto en la materia Lenguajes de computación IV

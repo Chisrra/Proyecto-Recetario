@@ -1,0 +1,28 @@
+.receta{
+    margin: 1vw;
+    height: 10rem;
+    width: 15rem;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+}
+.Rnombre{
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    background-color: lightslategray;
+    color:white;
+    font-weight: bold;
+    font-size: larger;
+}
+.RTnombre{
+    padding-right: 10px;
+}
+.Rimg{
+    align-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+}

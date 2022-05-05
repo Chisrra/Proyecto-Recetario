@@ -6,29 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/catalogo.css">
+    <script src="Scripts/jquery.js"></script>
     <title>Catálogo de Recetas</title>
 </head>
 
 <body>
-    <!-- div.receta>div.Rnombre>div.RTnombre^img:s.Rimg -->
+    <!-- div.box>a>(div.receta>(div.Rnombre>div.RTnombre)+img:s.Rimg)+div.desc -->
+    <div class="caja-botones">
+        <button type="button" class="filtroB" id="ResB">Res</button>
+        <button type="button" class="filtroB" id="PolloB">Pollo</button>
+        <button type="button" class="filtroB" id="PuercoB">Puerco</button>
+        <button type="button" class="filtroB" id="MariscoB">Mariscos</button>
+    </div>
     <div class="recetario">
-        <!---->
-        <div class="receta">
-            <div class="Rnombre">
-                <div class="RTnombre">Carne en su Jugo</div>
-            </div>
-            <img src="Imagenes/Recetas/carne-en-su-jugo-receta.jpg" alt="Carne en su jugo" srcset="" class="Rimg">
-        </div>
-        <!---->
-        <div class="receta">
-            <div class="Rnombre">
-                <div class="RTnombre">Enchiladas</div>
-            </div>
-            <img src="Imagenes/Recetas/enchiladas.png" alt="Enchiladas en salsa Chipotle" srcset="" class="Rimg">
-        </div>
-        <!---->
-        
-        <!---->
+        <script type="text/javascript">
+            let recetas = [
+                { name: "Carne en su jugo", type: "Res", foto: "carne-en-su-jugo-receta.jpg", cont: "Carnita en una salsa bien buena acompañada de frijolitos" },
+                { name: "Filete de res en salsa de mantequilla", type: "Res", foto: "filete-de-res-mantequilla.jpg", cont: "Filete bien bueno" },
+                { name: "Enchiladas", type: "Pollo", foto: "enchiladas.png", cont: "Enchiladas de pollito" },
+                { name: "Pozole verde", type: "Puerco", foto: "pozole_verde.png", cont: "Pozole verde con carnita de puerco" },
+                { name: "Piña marisquera", type: "Mariscos", foto: "piña-marisquera.jpg", cont: "Piña, mariscos y queso. Esta muy rico" },
+                { name: "Torre de mariscos", type: "Mariscos", foto: "torre-de-mariscos.jpg", cont: "Diversos maricos para que le des una mordidota" },
+                { name: "Camarones embarazados", type: "Mariscos", foto: "camarones-embarazados.jpg", cont: "Camarones empalados, no sé que pensar" }
+            ];
+            printRecetario(recetas);
+            //----Filtro---
+            $("#ResB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Res");
+                    printRecetario(platillos);
+                });
+
+            });
+            //---Fin filto--
+
+            //--Agregar recetas
+            function printRecetario(recetario) {
+                recetario.forEach(element => {
+                    $(".recetario").append(`
+                        <div class="box">
+                            <a href="https://www.google.com.mx">
+                                <div class="receta">
+                                    <div class="Rnombre">
+                                        <div class="RTnombre">${element.name}</div>
+                                    </div>
+                                    <img src="Imagenes/Recetas/${element.foto}" alt="${element.name}" srcset="" class="Rimg">                            
+                                </div>
+                            </a>
+                            <div class="desc">${element.cont}</div>
+                        </div>
+                    `);
+                });
+            }
+            //--Fin de las recetas
+        </script>
     </div>
 </body>
 

@@ -1,24 +1,78 @@
-.receta{
-    margin: 1vw;
-    height: 10rem;
-    width: 15rem;
-    position: relative;
-    display: inline-block;
-    text-align: right;
+.caja-botones {
+    column-count: 4;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+
 }
-.Rnombre{
+
+.filtroB {
+    background-color: darkslateblue;
+    border: none;
+    padding: .7em 1.3em;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: medium;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.filtroB:hover {
+    background-color: white;
+    color:black;
+    border: 0.1em solid darkslateblue;
+    transition-duration: 0.4s;
+}
+
+.recetario {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    height: auto;
+    width: 20rem;
+    margin: 1vw;
+    cursor: pointer;
+    transition: all 1s;
+}
+.box > .desc {
+    padding-top: 1vh;
+    visibility: hidden;
+    opacity: 0;
+    transition : visibility 0.6s, opacity 0.6s linear;
+}
+.box:hover  .desc{
+    visibility : visible;
+    opacity : 1;
+}
+.receta {
+    height: 13rem;
+    width: auto;
+    position: relative;
+}
+
+.Rnombre {
     position: absolute;
     top: 65%;
     width: 100%;
     background-color: lightslategray;
-    color:white;
+    color: white;
     font-weight: bold;
     font-size: larger;
 }
-.RTnombre{
-    padding-right: 10px;
+
+.RTnombre {
+    padding-left: 10px;
 }
-.Rimg{
+
+.Rimg {
     align-content: center;
     overflow: hidden;
     object-fit: cover;

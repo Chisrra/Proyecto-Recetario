@@ -13,6 +13,7 @@
 <body>
     <!-- div.box>a>(div.receta>(div.Rnombre>div.RTnombre)+img:s.Rimg)+div.desc -->
     <div class="caja-botones">
+        <button type="button" class="filtroB" id="todo"><b>Todo</b></button>
         <button type="button" class="filtroB" id="ResB">Res</button>
         <button type="button" class="filtroB" id="PolloB">Pollo</button>
         <button type="button" class="filtroB" id="PuercoB">Puerco</button>
@@ -20,6 +21,7 @@
     </div>
     <div class="recetario">
         <script type="text/javascript">
+            //--carga inicial
             let recetas = [
                 { name: "Carne en su jugo", type: "Res", foto: "carne-en-su-jugo-receta.jpg", cont: "Carnita en una salsa bien buena acompañada de frijolitos" },
                 { name: "Filete de res en salsa de mantequilla", type: "Res", foto: "filete-de-res-mantequilla.jpg", cont: "Filete bien bueno" },
@@ -30,6 +32,8 @@
                 { name: "Camarones embarazados", type: "Mariscos", foto: "camarones-embarazados.jpg", cont: "Camarones empalados, no sé que pensar" }
             ];
             printRecetario(recetas);
+            //---fin de la carga
+
             //----Filtro---
             $("#ResB").click(() => {
                 console.log("click");
@@ -43,12 +47,57 @@
                 });
 
             });
-            //---Fin filto--
+            $("#PolloB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Pollo");
+                    printRecetario(platillos);
+                });
 
-            //--Agregar recetas
-            function printRecetario(recetario) {
-                recetario.forEach(element => {
-                    $(".recetario").append(`
+            });
+            $("#PuercoB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Puerco");
+                    printRecetario(platillos);
+                });
+
+            });
+            $("#MariscoB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Mariscos");
+                    printRecetario(platillos);
+                });
+            });
+            $("#todo").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    printRecetario(recetas);
+                });
+            });
+                //---Fin filto--
+
+                //--Agregar recetas
+                function printRecetario(recetario) {
+                    recetario.forEach(element => {
+                        $(".recetario").append(`
                         <div class="box">
                             <a href="https://www.google.com.mx">
                                 <div class="receta">
@@ -61,8 +110,8 @@
                             <div class="desc">${element.cont}</div>
                         </div>
                     `);
-                });
-            }
+                    });
+                }
             //--Fin de las recetas
         </script>
     </div>

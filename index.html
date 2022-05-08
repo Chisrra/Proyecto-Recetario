@@ -14,17 +14,50 @@
     <header>
         <input type ="checkbox" id="btn-menu">
         <label for="btn-menu"><img src="https://img2.freepng.es/20180628/zaz/kisspng-computer-icons-hamburger-button-menu-new-menu-5b34724be5a1f0.5796308115301637879406.jpg" alt="icono de menu" width="30px" height="30px"></label>
-        <div id="op1"><a href="">Inicio</a></div><div id="op2"><a href="">sube tu Receta</a></div><div id="op3"><a href="">hola</a></div>
         <nav class="menu">
         <ul>
-            <li><a href="">carnes rojas</a></li>
-            <li><a href="">aves</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="">Sube tu receta</a></li>
+            <li><a href="">res</a></li>
+            <li><a href="">Pollo</a></li>
             <li><a href="">mariscos</a></li>
-            <li><a href="">caseras</a></li>
-            <li><a href="">vegetarianas</a></li>
+            <li><a href="">puerco</a></li>
+            <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca" class="btn" ><img src="https://pngset.com/images/search-magnifying-glass-icon-search-icon-gray-transparent-png-917227.png" alt="bicon" height="20px"width="20px"></button></li>
         </ul>
         </nav>
     </header>
+    <a id="inicio"></a>
+    <script>
+        btnbusca.onclick= function(){
+            var buscar =document.getElementById("barbusca").value;
+            switch (buscar){
+                case "pollo":{
+                aqui.innerHTML=" seleccionaron recetas de pollo";
+                    break;
+                }
+                case "res":{
+                aqui.innerHTML=" seleccionaron recetas de res";
+                    break;
+                }
+                case "puerco":{
+                aqui.innerHTML=" seleccionaron recetas de puerco";
+                    break;
+                }
+                case "mariscos":{
+                aqui.innerHTML=" seleccionaron recetas de mariscos";
+                    break;
+                }
+                default:{
+                    aqui.innerHTML="no se encontro nada";
+                }
+            }
+        }
+    </script>
+    <div id="aqui">
+
+    </div>
+   
+   
     <!-- Aquí termina la codificación para el menú y parte de la cabecera -->
 </body>
 </html>

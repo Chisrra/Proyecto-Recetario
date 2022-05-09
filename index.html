@@ -16,22 +16,20 @@
 <body>
     <!-- Aquí puse la codificación para el menú y parte de la cabecera -->
     <header>
+        <label for="btn-menu"><img src="Imagenes/btnHamburguesa.png" alt="Menu colapsable" width="50px"></label>
         <input type="checkbox" id="btn-menu">
-        <label for="btn-menu"><img
-                src="https://img2.freepng.es/20180628/zaz/kisspng-computer-icons-hamburger-button-menu-new-menu-5b34724be5a1f0.5796308115301637879406.jpg"
-                alt="icono de menu" width="30px" height="30px"></label>
         <nav class="menu">
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#inicio" id="todo">Inicio</a></li>
                 <li><a href="">Sube tu receta</a></li>
-                <li><a href="">Res</a></li>
-                <li><a href="">Pollo</a></li>
-                <li><a href="">Mariscos</a></li>
-                <li><a href="">Puerco</a></li>
+                <li><div id="ResB">Res</div></li>
+                <li><div id="PolloB">Pollo</div></li>
+                <li><div id="PuercoB">Puerco</div></li>
+                <li><div id="MariscoB">Mariscos</div></li>
                 <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca"
                         class="btn"><img
-                            src="https://pngset.com/images/search-magnifying-glass-icon-search-icon-gray-transparent-png-917227.png"
-                            alt="bicon" height="20px" width="20px"></button></li>
+                            src="Imagenes/Lupa2.svg"
+                            alt="bicon"></button></li>
             </ul>
         </nav>
     </header>
@@ -72,13 +70,13 @@
         <script type="text/javascript">
             //--carga inicial
             let recetas = [
-                { name: "Carne en su jugo", type: "Res", foto: "carne-en-su-jugo-receta.jpg", cont: "Carnita en una salsa bien buena acompañada de frijolitos" },
-                { name: "Filete de res en salsa de mantequilla", type: "Res", foto: "filete-de-res-mantequilla.jpg", cont: "Filete bien bueno" },
-                { name: "Enchiladas", type: "Pollo", foto: "enchiladas.png", cont: "Enchiladas de pollito" },
-                { name: "Pozole verde", type: "Puerco", foto: "pozole_verde.png", cont: "Pozole verde con carnita de puerco" },
-                { name: "Piña marisquera", type: "Mariscos", foto: "piña-marisquera.jpg", cont: "Piña, mariscos y queso. Esta muy rico" },
-                { name: "Torre de mariscos", type: "Mariscos", foto: "torre-de-mariscos.jpg", cont: "Diversos maricos para que le des una mordidota" },
-                { name: "Camarones embarazados", type: "Mariscos", foto: "camarones-embarazados.jpg", cont: "Camarones empalados, no sé que pensar" }
+                { name: "Carne en su jugo",                      type: "Res",      foto: "carne-en-su-jugo-receta.jpg",   cont: "Carnita en una salsa bien buena acompañada de frijolitos", dir:`carne en su jugo.html` },
+                { name: "Filete de res en salsa de mantequilla", type: "Res",      foto: "filete-de-res-mantequilla.jpg", cont: "Filete bien bueno",                                        dir:`Filete de res en salsa de mantequilla.html`  },
+                { name: "Enchiladas",                            type: "Pollo",    foto: "enchiladas.png",                cont: "Enchiladas de pollito",                                    dir:`enchiladas.html` },
+                { name: "Pozole verde",                          type: "Puerco",   foto: "pozole_verde.png",              cont: "Pozole verde con carnita de puerco",                       dir:`pozole verde.html` },
+                { name: "Piña marisquera",                       type: "Mariscos", foto: "piña-marisquera.jpg",           cont: "Piña, mariscos y queso. Esta muy rico",                    dir:`piña marisquera.html` },
+                { name: "Torre de mariscos",                     type: "Mariscos", foto: "torre-de-mariscos.jpg",         cont: "Diversos maricos para que le des una mordidota",           dir:`torre de mariscos.html` },
+                { name: "Camarones embarazados",                 type: "Mariscos", foto: "camarones-embarazados.jpg",     cont: "Camarones empalados, no sé que pensar",                    dir:`camarones embarazados.html` }
             ];
             printRecetario(recetas);
             //---fin de la carga
@@ -148,7 +146,7 @@
                 recetario.forEach(element => {
                     $(".recetario").append(`
                         <div class="box">
-                            <a href="https://www.google.com.mx">
+                            <a href="${element.dir}">
                                 <div class="receta">
                                     <div class="Rnombre">
                                         <div class="RTnombre">${element.name}</div>

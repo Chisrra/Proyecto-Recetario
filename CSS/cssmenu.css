@@ -1,33 +1,55 @@
 /* aquí inicia el estilo de lo que utilice para hacer la cabecera */
-body{
+body {
     margin: 0;
     font-family: sans-serif;
 }
-header{
+
+header {
+    margin: 0;
     width: 100%;
-    background-color: cadetblue;
+    background: url("fondo-menu.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     height: 80px;
+    font-size: x-large;
 }
-#btn-menu{
+
+#btn-menu {
     display: none;
 }
-header label{
+
+#btnbusca {
+    width: 3vw;
+    height: 2.5vw;
+    margin-right: 1vw;
+    background-color: #1bc5c8;
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+header label {
     display: none;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
 
 }
-header label:hover{
+
+header label:hover {
     cursor: pointer;
-    background:rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
-.menu{
+
+.menu {
     position: absolute;
     width: 99vw;
     transition: all 0.5s;
 }
-.menu ul{
+
+.menu ul {
     margin: 0;
     list-style: none;
     padding: 0;
@@ -35,7 +57,8 @@ header label:hover{
     flex-direction: row;
     width: 100%;
 }
-.menu li{
+
+.menu li {
     /* margin-top:-5% ;
     padding-top: 1%;
     width: 1.5%;   
@@ -43,24 +66,30 @@ header label:hover{
     text-align: right;
     flex-grow: 1;
     border-right: 1px solid #fff; */
-    margin-top:-5% ;
+    margin-top: -5%;
     padding-top: 1%;
-    width: 1.5%;    text-align: right;
+    width: 1.5%;
+    text-align: right;
     flex-grow: 1;
 }
-#buscador{
+
+#buscador {
     padding-top: 6.5%;
     width: 4%;
 }
-#barbusca{
+
+#barbusca {
     width: 75%;
     float: left;
     margin-left: 5%;
 }
-.menu li:hover{
-    background: rgba(0,0,0,0.3);
+
+.menu li:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
-.menu li a{
+
+.menu li a,
+.menu li div {
     /* display: block;
     text-decoration: none;
     text-align: center;
@@ -68,87 +97,120 @@ header label:hover{
     color:black;
     flex-grow: 1; */
     display: block;
-    padding-top: 50%;
-    /* padding: 50% 20%; */
+    padding-top: 45%;
     text-decoration: none;
     text-align: center;
     flex-grow: 1;
+    cursor: pointer;
 }
-.platillo{
+
+.platillo {
     float: left;
-    width: 350px; 
+    width: 350px;
     height: 300px;
     padding-right: 50px;
     padding-left: 20px;
 }
-.ingredientes{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+
+.ingredientes {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     padding-right: 400px;
     height: 20%;
     width: 10%;
     margin-top: 5%;
     float: right;
 }
-.prep{
+
+.prep {
     margin-left: 5%;
     margin-top: 5%;
     width: 50%;
 }
-@media (max-width: 768px){
-    header label{
+
+@media (max-width: 768px) {
+    header label {
         display: block;
     }
-    .menu{
-        position: absolute;
+
+    .menu {
+        position: relative;
         margin-left: -70%;
         padding-top: 0%;
+        z-index: 3;
         width: max-content;
     }
-    .menu ul{
+
+    .menu ul {
         flex-direction: column;
-        background-color: forestgreen;
+        background: url("fondo-barra-lateral.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 70vh;
     }
-    .menu li{
-        width: 30vw;   
-        height: 7vh;
+
+    .menu li {
+        width: 30vw;
+        height: 0vh;
         margin: 1%;
     }
-    .menu li a{
+
+    .menu li a,
+    .menu li div {
         padding: 0%;
+        color: black;
+        background-color: aliceblue;
+        font-weight: bold;
     }
-    #buscador{
+
+    #buscador {
         width: 30vw;
     }
-    #btn-menu:checked ~ .menu{
+
+    #btn-menu:checked~.menu {
         margin: 0%;
     }
 }
-@media (max-width: 565px){
-    header label{
+
+@media (max-width: 565px) {
+    header label {
         display: block;
     }
-    .menu{
+
+    .menu {
         position: absolute;
         margin-left: -70%;
         padding-top: 0%;
         width: max-content;
     }
-    .menu ul{
+
+    .menu ul {
         flex-direction: column;
-        background-color: forestgreen;
+        background: url("fondo-barra-lateral.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
-    .menu li{
-        width: 50vw;   
+
+    .menu li {
+        width: 50vw;
         height: 10vh;
     }
-    .menu li a{
+
+    .menu li a,
+    .menu li div {
         padding: 0%;
     }
-    #buscador{
+
+    #buscador {
         width: 49.5vw;
     }
-    #btn-menu:checked ~ .menu{
+
+    #btn-menu:checked~.menu {
         margin: 0%;
     }
 }
+
 /* aqui termina lo que utilice para la cabecera */

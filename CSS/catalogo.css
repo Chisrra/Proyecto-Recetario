@@ -13,6 +13,8 @@
     transition: all 1s;
 }
 .box > .desc {
+    color:white;
+    font-weight: bold;
     padding-top: 1vh;
     visibility: hidden;
     opacity: 0;

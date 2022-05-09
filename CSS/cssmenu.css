@@ -1,6 +1,7 @@
 /* aquí inicia el estilo de lo que utilice para hacer la cabecera */
 body {
     margin: 0;
+    background-color: #403D11;
     font-family: sans-serif;
 }
 
@@ -24,8 +25,8 @@ header {
 }
 
 #btnbusca {
-    width: 3vw;
-    height: 2.5vw;
+    width: 40px;
+    height: 40px;
     margin-right: 1vw;
     background-color: #1bc5c8;
     border: none;
@@ -189,26 +190,29 @@ header label:hover {
         justify-content: center;
         flex-wrap: wrap;
         height: 70vh;
+        width: 50vw;
     }
 
     .menu li {
-        width: 30vw;
-        height: 0vh;
-        margin: 1%;
+        width: 100% ;
+        margin-top: 1%;
     }
-
+    .menu li a{
+        color:darkgreen;
+    }
     .menu li a,
     .menu li div {
         padding: 0%;
-        color: black;
-        background-color: aliceblue;
         font-weight: bold;
     }
 
     #buscador {
         width: 30vw;
     }
-
+    #btnbusca {
+        width: 7vw;
+        height: 50%;
+    }
     #btn-menu:checked~.menu {
         margin: 0%;
     }
@@ -218,7 +222,6 @@ header label:hover {
     header label {
         display: block;
     }
-
     .menu {
         position: absolute;
         margin-left: -70%;
@@ -232,11 +235,13 @@ header label:hover {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+        height: 90vh;
+        width: 70vw;
     }
 
     .menu li {
-        width: 50vw;
-        height: 10vh;
+        width: 100% ;
+        margin-top: 1%;
     }
 
     .menu li a,
@@ -247,7 +252,10 @@ header label:hover {
     #buscador {
         width: 49.5vw;
     }
-
+    #btnbusca {
+        width: 12%;
+        height: 80%;
+    }
     #btn-menu:checked~.menu {
         margin: 0%;
     }

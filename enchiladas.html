@@ -6,20 +6,60 @@
     <meta charset="UFT-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-    <link rel="stylesheet" href="cssmenu.css">
+    <link rel="stylesheet" href="/CSS/cssmenu.css">
 </head>
 
 <body>
     <header>
-        <h1>
-            <center>Enchiladas</center>
-        </h1>
+        <label for="btn-menu"><img src="Imagenes/btnHamburguesa.png" alt="Menu colapsable" width="50px"></label>
+        <input type="checkbox" id="btn-menu">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#inicio" id="todo">Inicio</a></li>
+                <li><div id="ResB">Res</div></li>
+                <li><div id="PolloB">Pollo</div></li>
+                <li><div id="PuercoB">Puerco</div></li>
+                <li><div id="MariscoB">Mariscos</div></li>
+                <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca"
+                        class="btn"><img
+                            src="Imagenes/Lupa2.svg"
+                            alt="bicon"></button></li>
+            </ul>
+        </nav>
     </header>
+    <a id="inicio"></a>
+    <script>
+        btnbusca.onclick = function () {
+            var buscar = document.getElementById("barbusca").value;
+            switch (buscar) {
+                case "pollo": {
+                    aqui.innerHTML = " seleccionaron recetas de pollo";
+                    break;
+                }
+                case "res": {
+                    aqui.innerHTML = " seleccionaron recetas de res";
+                    break;
+                }
+                case "puerco": {
+                    aqui.innerHTML = " seleccionaron recetas de puerco";
+                    break;
+                }
+                case "mariscos": {
+                    aqui.innerHTML = " seleccionaron recetas de mariscos";
+                    break;
+                }
+                default: {
+                    aqui.innerHTML = "no se encontro nada";
+                }
+            }
+        }
+    </script>
     <br>
     <img src="Imagenes/Recetas/enchiladas.png" alt="imagen de Filete de res en salsa de mantequilla para ejemplificar"
         class="platillo">
-    <p class="ingredientes">
         <b>ingredientes:</b>
+    <p class="ingredientes">
     <ul>
         <li>500g de jitomate</li>
         <li>1/4 cebollas</li>
@@ -37,7 +77,7 @@
     </ul>
     <b>duración aprx: </b>50min <b>cantidad: </b>4 porciones
     </p><br>
-    <div class="prep">
+    <div class="prepench">
         <b>Preparacion:</b>
         <li>Licúa el jitomate,la cebolla,el ajo,los chiles y el agua hasta obtener una consistencia líquida.</li>
         <li>Cuela la salsa,fríela en una sartén y sazona con sal y pimienta.</li>

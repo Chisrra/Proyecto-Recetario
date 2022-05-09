@@ -4,16 +4,59 @@
     <title>Pozole Verde</title>
     <meta charset="UFT-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-    <link rel="stylesheet" href="cssmenu.css">
+    <link rel="stylesheet" href="/CSS/cssmenu.css">
 </head>
 <body>
     <header>
-        <h1><center>Pozole Verde</center></h1>
+        <label for="btn-menu"><img src="Imagenes/btnHamburguesa.png" alt="Menu colapsable" width="50px"></label>
+        <input type="checkbox" id="btn-menu">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#inicio" id="todo">Inicio</a></li>
+                <li><div id="ResB">Res</div></li>
+                <li><div id="PolloB">Pollo</div></li>
+                <li><div id="PuercoB">Puerco</div></li>
+                <li><div id="MariscoB">Mariscos</div></li>
+                <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca"
+                        class="btn"><img
+                            src="Imagenes/Lupa2.svg"
+                            alt="bicon"></button></li>
+            </ul>
+        </nav>
     </header>
+    <a id="inicio"></a>
+    <script>
+        btnbusca.onclick = function () {
+            var buscar = document.getElementById("barbusca").value;
+            switch (buscar) {
+                case "pollo": {
+                    aqui.innerHTML = " seleccionaron recetas de pollo";
+                    break;
+                }
+                case "res": {
+                    aqui.innerHTML = " seleccionaron recetas de res";
+                    break;
+                }
+                case "puerco": {
+                    aqui.innerHTML = " seleccionaron recetas de puerco";
+                    break;
+                }
+                case "mariscos": {
+                    aqui.innerHTML = " seleccionaron recetas de mariscos";
+                    break;
+                }
+                default: {
+                    aqui.innerHTML = "no se encontro nada";
+                }
+            }
+        }
+    </script>
     <br>
     <img src="Imagenes/Recetas/pozole_verde.png" alt="imagen de Filete de res en salsa de mantequilla para ejemplificar"  class="platillo">
-    <p class="ingredientes">
-        <b>ingredientes:</b>
+    <b>ingredientes:</b>
+    <div class="ingredientes">
+        <ul>
         <br>
         <li>5L de Agua</li>
         <li>1 Cebolla cortada a la mitad</li>
@@ -29,6 +72,7 @@
         <li>2 Dientes de Ajo asados</li>
         <li>4 Chiles serrano asados</li>
         <li>3/4Tz de Pepitas verdes asadas</li>
+    </ul><ul>
         <li>20 Ramitas de Cilantro fresco desinfectado</li>
         <li>10 Rodajas de Rábano desinfectadas</li>
         <li>1Cda de Comino molido</li>
@@ -41,11 +85,14 @@
         <li>1/4 Cebolla picada finamente</li>
         <li>1Cda de Orégano seco</li>
         <li>3 Limones (su jugo)</li>
-    </p>
-    <p class="preparacion">
-        <b>duración aprx: </b>160min   <b>cantidad: </b>6 porciones
-    </p><br>
+    </ul>
+</div>
+    
+    <br><br>
     <div class="prep">
+        <p class="preparacion">
+            <b>duración aprx: </b>160min   <b>cantidad: </b>6 porciones
+        </p>
     <b>Preparacion:</b>
     <li>En una olla, calienta el agua con 1 cebolla, 2 dientes de ajo, el maíz y cocina por 1 hora con 20 minutos a fuego alto o hasta que el maíz reviente. Añade 2 ½ cucharadas de sal, las hojas de laurel, la pulpa y el espinazo de cerdo; cocina por 1 hora con 25 minutos o hasta que la carne esté suave. Retira el ajo, la cebolla, las hojas de laurel y la pulpa de cerdo, deshébrala y reserva.</li>
     <li>Licúa 1 cucharada de orégano con los tomates verdes, ¾ cebolla asada, 2 ajos asados, el chile serrano, la pepita verde, el cilantro, las hojas de rábano, el comino, la pimienta y ½ cucharada de sal. Calienta la manteca, vierte lo que licuaste y cocina hasta que espese. Agrega el epazote y la mezcla anterior a la olla con el maíz; cocina por 30 minutos más.</li>

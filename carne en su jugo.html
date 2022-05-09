@@ -4,17 +4,63 @@
     <title>Carne en su Jugo</title>
     <meta charset="UFT-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-    <link rel="stylesheet" href="cssmenu.css">
+    <link rel="stylesheet" href="/CSS/cssmenu.css">
 </head>
 <body>
     <header>
-        <h1><center>"Carne en su Jugo"</center></h1>
+        <label for="btn-menu"><img src="Imagenes/btnHamburguesa.png" alt="Menu colapsable" width="50px"></label>
+        <input type="checkbox" id="btn-menu">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#inicio" id="todo">Inicio</a></li>
+                <li><div id="ResB">Res</div></li>
+                <li><div id="PolloB">Pollo</div></li>
+                <li><div id="PuercoB">Puerco</div></li>
+                <li><div id="MariscoB">Mariscos</div></li>
+                <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca"
+                        class="btn"><img
+                            src="Imagenes/Lupa2.svg"
+                            alt="bicon"></button></li>
+            </ul>
+        </nav>
     </header>
+    <a id="inicio"></a>
+    <script>
+        btnbusca.onclick = function () {
+            var buscar = document.getElementById("barbusca").value;
+            switch (buscar) {
+                case "pollo": {
+                    aqui.innerHTML = " seleccionaron recetas de pollo";
+                    break;
+                }
+                case "res": {
+                    aqui.innerHTML = " seleccionaron recetas de res";
+                    break;
+                }
+                case "puerco": {
+                    aqui.innerHTML = " seleccionaron recetas de puerco";
+                    break;
+                }
+                case "mariscos": {
+                    aqui.innerHTML = " seleccionaron recetas de mariscos";
+                    break;
+                }
+                default: {
+                    aqui.innerHTML = "no se encontro nada";
+                }
+            }
+        }
+    </script>
+    <div class="nombre">
+    <h1><center>Carne en su Jugo</center></h1>
+    </div>
     <br>
     <img src="Imagenes/Recetas/carne-en-su-jugo-receta.jpg" alt="imagen de carne en su jugo para ejemplificar"  class="platillo">
+    <b>ingredientes:</b>
     <p class="ingredientes">
-        <b>ingredientes:</b>
         <br>
+        <ul>
         <li>500gr de tocino</li>
         <li>1Kg de bistec de res</li>
         <li>4 tomates verdes</li>
@@ -28,11 +74,12 @@
         <li>cilantro</li>
         <li>cebolla picada</li>
         <li>aceite vegetal</li>
+    </ul>
     </p>
     <p class="preparacion">
         <b>duración aprx: </b>40min   <b>cantidad: </b>2kg
     </p><br>
-    <div class="prep">
+    <div class="prepcar">
         <b>Preparacion:</b>
         <li>Salpimiente y corte el bistec en cortes pequeños</li>
         <li>Corta el tocino, agrégalo a una olla caliente con aceite </li>

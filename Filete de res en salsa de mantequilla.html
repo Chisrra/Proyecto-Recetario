@@ -4,12 +4,54 @@
     <title>Filete de Res en Mantequila</title>
     <meta charset="UFT-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-    <link rel="stylesheet" href="cssmenu.css">
+    <link rel="stylesheet" href="/CSS/cssmenu.css">
 </head>
 <body>
     <header>
-        <h1><center>"Filete de res en salsa de mantequilla"</center></h1>
+        <label for="btn-menu"><img src="Imagenes/btnHamburguesa.png" alt="Menu colapsable" width="50px"></label>
+        <input type="checkbox" id="btn-menu">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#inicio" id="todo">Inicio</a></li>
+                <li><div id="ResB">Res</div></li>
+                <li><div id="PolloB">Pollo</div></li>
+                <li><div id="PuercoB">Puerco</div></li>
+                <li><div id="MariscoB">Mariscos</div></li>
+                <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca"
+                        class="btn"><img
+                            src="Imagenes/Lupa2.svg"
+                            alt="bicon"></button></li>
+            </ul>
+        </nav>
     </header>
+    <a id="inicio"></a>
+    <script>
+        btnbusca.onclick = function () {
+            var buscar = document.getElementById("barbusca").value;
+            switch (buscar) {
+                case "pollo": {
+                    aqui.innerHTML = " seleccionaron recetas de pollo";
+                    break;
+                }
+                case "res": {
+                    aqui.innerHTML = " seleccionaron recetas de res";
+                    break;
+                }
+                case "puerco": {
+                    aqui.innerHTML = " seleccionaron recetas de puerco";
+                    break;
+                }
+                case "mariscos": {
+                    aqui.innerHTML = " seleccionaron recetas de mariscos";
+                    break;
+                }
+                default: {
+                    aqui.innerHTML = "no se encontro nada";
+                }
+            }
+        }
+    </script>
     <br>
     <img src="Imagenes/Recetas/filete-de-res-mantequilla.jpg" alt="imagen de Filete de res en salsa de mantequilla para ejemplificar"  class="platillo">
     <p class="ingredientes">
@@ -27,7 +69,7 @@
     <p class="preparacion">
         <b>duración aprx: </b>30min   <b>cantidad: </b>1.5kg
     </p><br>
-    <div class="prep">
+    <div class="prepfil">
     <b>Preparacion:</b>
     <li>En un tazón grande, mezcle las tiras del filete con la salsa de soja, aceite de oliva, pimienta molida y salsa de pimienta. Reserve y deje marinar mientras cocina las papas.</li>
     <li>En una sartén grande, en el fuego medio-alto, mezcle una cuchara de aceite de oliva y una cucharada de mantequilla</li>

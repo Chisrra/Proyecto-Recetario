@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Recuerda hacer pull antes de empezar a programar -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Imagenes\vegetables-1584999_1920_preview_rev_1.ico">
-    <link rel="stylesheet" href="cssmenu.css">
+    <link rel="stylesheet" href="/CSS/cssmenu.css">
+    <link rel="stylesheet" type="text/css" href="CSS/catalogo.css">
+    <script src="Scripts/jquery.js"></script>
     <title>Riko Recetario</title>
 </head>
+
 <body>
     <!-- Aquí puse la codificación para el menú y parte de la cabecera -->
     <header>
-        <input type ="checkbox" id="btn-menu">
-        <label for="btn-menu"><img src="https://img2.freepng.es/20180628/zaz/kisspng-computer-icons-hamburger-button-menu-new-menu-5b34724be5a1f0.5796308115301637879406.jpg" alt="icono de menu" width="30px" height="30px"></label>
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu"><img
+                src="https://img2.freepng.es/20180628/zaz/kisspng-computer-icons-hamburger-button-menu-new-menu-5b34724be5a1f0.5796308115301637879406.jpg"
+                alt="icono de menu" width="30px" height="30px"></label>
         <nav class="menu">
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="">Sube tu receta</a></li>
-            <li><a href="">res</a></li>
-            <li><a href="">Pollo</a></li>
-            <li><a href="">mariscos</a></li>
-            <li><a href="">puerco</a></li>
-            <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca" class="btn" ><img src="https://pngset.com/images/search-magnifying-glass-icon-search-icon-gray-transparent-png-917227.png" alt="bicon" height="20px"width="20px"></button></li>
-        </ul>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="">Sube tu receta</a></li>
+                <li><a href="">Res</a></li>
+                <li><a href="">Pollo</a></li>
+                <li><a href="">Mariscos</a></li>
+                <li><a href="">Puerco</a></li>
+                <li id="buscador"><input id="barbusca" class="busca" placeholder="Buscar..."><button id="btnbusca"
+                        class="btn"><img
+                            src="https://pngset.com/images/search-magnifying-glass-icon-search-icon-gray-transparent-png-917227.png"
+                            alt="bicon" height="20px" width="20px"></button></li>
+            </ul>
         </nav>
     </header>
     <a id="inicio"></a>
     <script>
-        btnbusca.onclick= function(){
-            var buscar =document.getElementById("barbusca").value;
-            switch (buscar){
-                case "pollo":{
-                aqui.innerHTML=" seleccionaron recetas de pollo";
+        btnbusca.onclick = function () {
+            var buscar = document.getElementById("barbusca").value;
+            switch (buscar) {
+                case "pollo": {
+                    aqui.innerHTML = " seleccionaron recetas de pollo";
                     break;
                 }
-                case "res":{
-                aqui.innerHTML=" seleccionaron recetas de res";
+                case "res": {
+                    aqui.innerHTML = " seleccionaron recetas de res";
                     break;
                 }
-                case "puerco":{
-                aqui.innerHTML=" seleccionaron recetas de puerco";
+                case "puerco": {
+                    aqui.innerHTML = " seleccionaron recetas de puerco";
                     break;
                 }
-                case "mariscos":{
-                aqui.innerHTML=" seleccionaron recetas de mariscos";
+                case "mariscos": {
+                    aqui.innerHTML = " seleccionaron recetas de mariscos";
                     break;
                 }
-                default:{
-                    aqui.innerHTML="no se encontro nada";
+                default: {
+                    aqui.innerHTML = "no se encontro nada";
                 }
             }
         }
@@ -56,8 +65,106 @@
     <div id="aqui">
 
     </div>
-   
-   
     <!-- Aquí termina la codificación para el menú y parte de la cabecera -->
+
+    <!-- Inicio del catalogo de recetas -->
+    <div class="recetario">
+        <script type="text/javascript">
+            //--carga inicial
+            let recetas = [
+                { name: "Carne en su jugo", type: "Res", foto: "carne-en-su-jugo-receta.jpg", cont: "Carnita en una salsa bien buena acompañada de frijolitos" },
+                { name: "Filete de res en salsa de mantequilla", type: "Res", foto: "filete-de-res-mantequilla.jpg", cont: "Filete bien bueno" },
+                { name: "Enchiladas", type: "Pollo", foto: "enchiladas.png", cont: "Enchiladas de pollito" },
+                { name: "Pozole verde", type: "Puerco", foto: "pozole_verde.png", cont: "Pozole verde con carnita de puerco" },
+                { name: "Piña marisquera", type: "Mariscos", foto: "piña-marisquera.jpg", cont: "Piña, mariscos y queso. Esta muy rico" },
+                { name: "Torre de mariscos", type: "Mariscos", foto: "torre-de-mariscos.jpg", cont: "Diversos maricos para que le des una mordidota" },
+                { name: "Camarones embarazados", type: "Mariscos", foto: "camarones-embarazados.jpg", cont: "Camarones empalados, no sé que pensar" }
+            ];
+            printRecetario(recetas);
+            //---fin de la carga
+
+            //----Filtro---
+            $("#ResB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Res");
+                    printRecetario(platillos);
+                });
+
+            });
+            $("#PolloB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Pollo");
+                    printRecetario(platillos);
+                });
+
+            });
+            $("#PuercoB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Puerco");
+                    printRecetario(platillos);
+                });
+
+            });
+            $("#MariscoB").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    platillos = recetas.filter(tipo => tipo.type === "Mariscos");
+                    printRecetario(platillos);
+                });
+            });
+            $("#todo").click(() => {
+                console.log("click");
+                $(".box").hide("slow", function () {
+                    const bote = document.getElementsByClassName("box");
+                    while (bote.length > 0) {
+                        bote[0].parentNode.removeChild(bote[0]);
+                    }
+                    printRecetario(recetas);
+                });
+            });
+            //---Fin filto--
+
+            //--Agregar recetas
+            function printRecetario(recetario) {
+                recetario.forEach(element => {
+                    $(".recetario").append(`
+                        <div class="box">
+                            <a href="https://www.google.com.mx">
+                                <div class="receta">
+                                    <div class="Rnombre">
+                                        <div class="RTnombre">${element.name}</div>
+                                    </div>
+                                    <img src="Imagenes/Recetas/${element.foto}" alt="${element.name}" srcset="" class="Rimg">                            
+                                </div>
+                            </a>
+                            <div class="desc">${element.cont}</div>
+                        </div>
+                    `);
+                });
+            }
+            //--Fin de las recetas
+        </script>
+    </div>
+    <!-- Fin del catalogo de recetas -->
 </body>
+
 </html>

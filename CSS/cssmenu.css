@@ -24,7 +24,7 @@ header label:hover{
 }
 .menu{
     position: absolute;
-    width: 100vw;
+    width: 99vw;
     transition: all 0.5s;
 }
 .menu ul{
@@ -36,11 +36,17 @@ header label:hover{
     width: 100%;
 }
 .menu li{
+    /* margin-top:-5% ;
+    padding-top: 1%;
+    width: 1.5%;   
+    height: 0vh;
+    text-align: right;
+    flex-grow: 1;
+    border-right: 1px solid #fff; */
     margin-top:-5% ;
     padding-top: 1%;
     width: 1.5%;    text-align: right;
     flex-grow: 1;
-    border-right: 1px solid #fff;
 }
 #buscador{
     padding-top: 6.5%;
@@ -55,8 +61,15 @@ header label:hover{
     background: rgba(0,0,0,0.3);
 }
 .menu li a{
+    /* display: block;
+    text-decoration: none;
+    text-align: center;
+    height: 10vh;
+    color:black;
+    flex-grow: 1; */
     display: block;
-    padding: 50% 20%;
+    padding-top: 50%;
+    /* padding: 50% 20%; */
     text-decoration: none;
     text-align: center;
     flex-grow: 1;
@@ -88,10 +101,51 @@ header label:hover{
     .menu{
         position: absolute;
         margin-left: -70%;
-        width: 50%;
+        padding-top: 0%;
+        width: max-content;
     }
     .menu ul{
         flex-direction: column;
+        background-color: forestgreen;
+    }
+    .menu li{
+        width: 30vw;   
+        height: 7vh;
+        margin: 1%;
+    }
+    .menu li a{
+        padding: 0%;
+    }
+    #buscador{
+        width: 30vw;
+    }
+    #btn-menu:checked ~ .menu{
+        margin: 0%;
+    }
+}
+@media (max-width: 565px){
+    header label{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        margin-left: -70%;
+        padding-top: 0%;
+        width: max-content;
+    }
+    .menu ul{
+        flex-direction: column;
+        background-color: forestgreen;
+    }
+    .menu li{
+        width: 50vw;   
+        height: 10vh;
+    }
+    .menu li a{
+        padding: 0%;
+    }
+    #buscador{
+        width: 49.5vw;
     }
     #btn-menu:checked ~ .menu{
         margin: 0%;

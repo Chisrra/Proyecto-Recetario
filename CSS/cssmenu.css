@@ -18,8 +18,9 @@ header {
 }
 .nombre{
     width: 100%;
-    background-color: #CBF564;
+    background-color: #ebe292da;
     margin: 0%;
+    color: #000000da;
 }
 #btn-menu {
     display: none;
